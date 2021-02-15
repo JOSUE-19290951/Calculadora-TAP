@@ -1,5 +1,6 @@
-
-package topicosavanzados;
+/*
+JOSUE DANIEL TORRES SANTOS 
+*/
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.*;
