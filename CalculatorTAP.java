@@ -1,7 +1,6 @@
 /*
 JOSUE DANIEL TORRES SANTOS
 */
-package topicosavanzados;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
