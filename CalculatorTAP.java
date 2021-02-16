@@ -16,22 +16,22 @@ public class CalculatorTAP extends JFrame{
     JTextField caja;
     
     public CalculatorTAP(){
-        setTitle("Calculadora");
+        setTitle("Calculadora"); //título de la ventana
         setSize(300,400);
-        setResizable(false);
+        setResizable(false); // aquí impedimos que pueda ser modificado el tamaño de la ventana
         setLocationRelativeTo(null);
         
         init();
-        setVisible(true);
+        setVisible(true); //true indicando que se muestre nuestra ventana de manera visible 
     }
    
  private void init() {
       panel_principal = new JPanel();
       panel_principal.setLayout(new BorderLayout());
       caja = new JTextField();
-      panel_principal.add("North",caja);
+      panel_principal.add("North",caja); //mandamos hacia la parte superior el campo de los numeros.
       panel_botones = new JPanel();
-      panel_botones.setLayout(new GridLayout(5,4,5,5));
+      panel_botones.setLayout(new GridLayout(5,4,5,5)); //damos tamaño a los botones, knidicamdo 
       agregarBotones();
       panel_principal.add("Center",panel_botones);
       getContentPane().add(panel_principal);
@@ -43,6 +43,7 @@ public class CalculatorTAP extends JFrame{
  String operacion="";
  boolean niu =true;
  
+    
  private void agregarBotones(){
     boton = new JButton[20];
     boton[0]=new JButton("CE");
@@ -66,9 +67,12 @@ public class CalculatorTAP extends JFrame{
     boton[18]=new JButton("=");
     boton[19]=new JButton("+");
     
+     //hacemos un ciclo de los botones para que sean iguales.
     for(int i=0;i<20;i++){
          panel_botones.add(boton[i]);
     }
+     // utilicé el método lambda para la reducción de código y solo puede ser utilizado en una versión superior a java 8
+     //boton para abrir una segunda ventana con los datos.
      boton[1].addActionListener((ActionEvent evt) -> {
          Datos dates = new Datos();
     });
@@ -159,7 +163,7 @@ public class CalculatorTAP extends JFrame{
           if(niu){caja.setText("");niu=false;}
           caja.setText(caja.getText()+".");
     });
-        //IGUAL
+        //equals
       boton[18].addActionListener((ActionEvent evt) -> {
           try{
               op2=Double.parseDouble(caja.getText());
@@ -187,7 +191,7 @@ public class CalculatorTAP extends JFrame{
           }
           niu=true;
     });
-        //CE
+        //CE borrado
       boton[0].addActionListener((ActionEvent evt) -> {
           caja.setText("");
           op1=op2=0;
@@ -196,7 +200,7 @@ public class CalculatorTAP extends JFrame{
 }
    
     public static void main(String args[]) {
-        // TODO code application logic here
+     //instanciacion del objeto
         CalculatorTAP calculatorTAP = new CalculatorTAP();
     }
 }
